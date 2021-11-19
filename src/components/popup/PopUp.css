@@ -1,0 +1,78 @@
+@keyframes slideSecond {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+@keyframes slideFirst {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+.popupWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1;
+}
+
+.popupWrapper.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabItem {
+  position: relative;
+}
+
+.tabItem > div {
+  padding: 20px;
+}
+
+.tabItem > a {
+  display: inline-block;
+  padding: 20px;
+}
+
+.tabItem.activeItemFirst {
+  animation-duration: 1s;
+  animation-name: slideSecond;
+}
+
+.tabItem.activeItemSecond {
+  visibility: visible;
+  animation-duration: 1s;
+  animation-name: slideFirst;
+}
+
+.popupInner {
+  background-color: #fff;
+  max-width: 500px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.closeBtn {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
